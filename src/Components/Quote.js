@@ -41,22 +41,26 @@ const Quote = () => {
       });
   };
 
+  const fadeIn = `${classes.fadeIn}`;
+  const fadeOut = `${classes.fadeOut}`;
   const tweetContent = encodeURIComponent('"' + quote + '" ' + author);
   const quoteWrapper = `${classes.quote_wrapper} ${
-    fade === "in" ? classes.fadeIn : classes.fadeOut
+    fade === "in" ? fadeIn : fadeOut
   }`;
 
   return (
-    <div className={quoteWrapper}>
+    <div className={quoteWrapper} id="quote-box">
       <div className={classes.quote_wrapper_inner}>
-        <p className={classes.quote_text}>
+        <p className={classes.quote_text} id="text">
           <span className={classes.quote_marks}>" </span>
           {quote}
           <span className={classes.quote_marks}>"</span>
         </p>
-        <p className={classes.quote_author}>- {author}</p>
+        <p className={classes.quote_author} id="author">
+          - {author}
+        </p>
         <div className={classes.quote_buttons}>
-          <Button>
+          <Button id="tweet-quote">
             <a
               href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${tweetContent}`}
               target="_blank"
@@ -65,7 +69,9 @@ const Quote = () => {
               Tweet
             </a>
           </Button>
-          <Button clicked={showNewQuote}>Click to see new quote</Button>
+          <Button clicked={showNewQuote} id="new-quote">
+            Click to see new quote
+          </Button>
         </div>
       </div>
     </div>
