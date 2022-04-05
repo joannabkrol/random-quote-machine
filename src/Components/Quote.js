@@ -19,22 +19,17 @@ const Quote = () => {
     setFade("out");
     setTimeout(fetchNewQuote, 1500);
   };
-  // we want to set fade out for 1 second
-  // then we want to change data
-  // then we want to fade it in
 
   const fetchNewQuote = () => {
     fetch("https://type.fit/api/quotes")
       .then((response) => {
         let res = response.json();
-        console.log(res);
         return res;
       })
       .then((arr) => {
         let randomIndex = Math.floor(Math.random() * arr.length);
         setQuote(arr[randomIndex].text.trim());
         setAuthor(arr[randomIndex].author);
-        console.log(arr[0]);
       })
       .catch((err) => {
         console.error("err:", err);
@@ -60,11 +55,12 @@ const Quote = () => {
           - {author}
         </p>
         <div className={classes.quote_buttons}>
-          <Button id="tweet-quote">
+          <Button>
             <a
               href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${tweetContent}`}
               target="_blank"
               rel="noreferrer"
+              id="tweet-quote"
             >
               Tweet
             </a>
