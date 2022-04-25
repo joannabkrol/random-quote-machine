@@ -1,0 +1,74 @@
+.quote_wrapper {
+  background-color: rgb(243, 250, 248);
+  max-width: 70%;
+  max-height: 70%;
+  margin: auto;
+  position: absolute;
+  top: 35%;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1rem rgb(243, 250, 248) solid;
+}
+
+.quote_wrapper_inner {
+  /* border-radius: 1rem; */
+  /* padding: 1rem; */
+  /* background-color: rgb(237, 245, 242);
+  border: 0.75rem rgb(237, 245, 242) solid; */
+}
+
+.quote_text {
+  font-style: italic;
+  font-weight: 100;
+  font-size: 1.5rem;
+  color: rgb(6, 78, 54);
+}
+
+.fadeOut {
+  animation: fadeOut 1.5s;
+  opacity: 0;
+}
+
+.fadeIn {
+  animation: fadeIn 1.5s;
+  opacity: 1;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.quote_marks {
+  font-weight: 900;
+  font-size: 2rem;
+  font-family: cursive;
+}
+
+.quote_author {
+  font-size: 0.75rem;
+  color: rgb(6, 78, 54);
+}
+
+.quote_buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 0 0 0;
+}
