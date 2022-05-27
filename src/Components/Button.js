@@ -1,8 +1,13 @@
 import classes from "./Button.module.css";
 
-const Button = ({ children, clicked, id }) => {
+const Button = ({ testId, children, clicked, id }) => {
   return (
-    <button className={classes.button} onClick={clicked} id={id}>
+    <button
+      data-testid={testId}
+      className={classes.button}
+      onClick={clicked}
+      id={id}
+    >
       {children}
     </button>
   );

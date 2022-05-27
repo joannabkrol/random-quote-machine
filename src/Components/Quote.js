@@ -1,6 +1,6 @@
-import classes from "./Quote.module.css";
 import { useEffect, useState } from "react";
 import Button from "./Button";
+import classes from "./Quote.module.css";
 
 const Quote = () => {
   const [quote, setQuote] = useState("");
@@ -46,16 +46,20 @@ const Quote = () => {
   return (
     <div className={quoteWrapper} id="quote-box">
       <div className={classes.quote_wrapper_inner}>
-        <p className={classes.quote_text} id="text">
+        <p className={classes.quote_text} id="text" data-testid="quote-text">
           <span className={classes.quote_marks}>" </span>
           {quote}
           <span className={classes.quote_marks}>"</span>
         </p>
-        <p className={classes.quote_author} id="author">
+        <p
+          className={classes.quote_author}
+          id="author"
+          data-testid="quote-author"
+        >
           - {author}
         </p>
         <div className={classes.quote_buttons}>
-          <Button>
+          <Button testId="tweet-btn">
             <a
               href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${tweetContent}`}
               target="_blank"
@@ -65,7 +69,11 @@ const Quote = () => {
               Tweet
             </a>
           </Button>
-          <Button clicked={showNewQuote} id="new-quote">
+          <Button
+            clicked={showNewQuote}
+            id="new-quote"
+            testId="new-quote-button"
+          >
             Click to see new quote
           </Button>
         </div>
